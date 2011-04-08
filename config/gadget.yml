@@ -1,7 +1,7 @@
 gathershow:
   caption:
-    ja_JP: "テスト"
+    ja_JP: "ギャザー"
   description:
-    ja_JP: "テスト"
+    ja_JP: "アクティビティを集めます"
   component: [gather, selectBox]
 
