@@ -1,0 +1,16 @@
+options:
+  charset: utf8
+
+GatherData:
+  columns:
+    id: {type: integer(4), primary: true, autoincrement: true }
+    title: {type: string(100), notnull: true }
+    description: {type: string(400) }
+
+GatherActivity:
+  columns:
+    id: {type: integer(4), primary: true, autoincrement: true }
+    gather_data_id: {type: integer(4), notnull: true }
+    activity_id: {type: integer(4), notnull: true }
+  relations:
+    GatherData: {onDelete: CASCADE, foreignAlias: GatherActivities }

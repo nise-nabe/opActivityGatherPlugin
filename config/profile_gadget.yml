@@ -1,0 +1,7 @@
+gathershow:
+  caption:
+    ja_JP: "テスト"
+  description:
+    ja_JP: "テスト"
+  component: [gather, selectBox]
+

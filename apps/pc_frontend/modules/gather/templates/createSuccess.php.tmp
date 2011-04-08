@@ -1,0 +1,20 @@
+<?php
+	op_include_form('gather_data_form', $form, array(
+		'url' => 'show',
+		'title' => 'ギャザー作成'
+	));
+?>
+<?php $activities = array() ?>
+<?php slot('activities') ?>
+<div class="box_list">
+<ol id="<?php echo $id ?>_timeline" class="activities">
+<?php foreach ($activities as $activity): ?>
+<?php include_partial('acgather/myDefaultActivityRecord', array('activity' => $activity)); ?>
+<?php endforeach; ?>
+</ol>
+</div>
+<?php end_slot(); ?>
+<?php $params = array(
+  'class' => 'activityBox homeRecentList',
+) ?>
+<?php op_include_box($id, get_slot('activities'), $params) ?>
