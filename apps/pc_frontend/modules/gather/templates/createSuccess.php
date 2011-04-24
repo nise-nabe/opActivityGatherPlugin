@@ -10,6 +10,7 @@
 	}
 	$activities = Doctrine::getTable('ActivityData')->createQuery()->whereIn('id', $actIds)->execute();
 ?>
+<div class="partsHeading"><h3>ギャザーアクティビティ</h3></div>
 <?php slot('activities') ?>
 <div class="box_list">
 <ol id="<?php echo $id ?>_timeline" class="activities">

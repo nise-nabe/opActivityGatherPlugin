@@ -1,6 +1,4 @@
 <?php #print_r($data) ?>
-<div class="ditem"><div class="item">
-<table>
 <?php foreach($data as $gatherData): ?>
 <?php
 $gatherId = $gatherData->current();
@@ -13,16 +11,17 @@ foreach ($gatherActivities as $gatherActivity){
 $activities = Doctrine::getTable('ActivityData')->createQuery()->whereIn('id', $activityIds)->execute();
 #print_r($activityIds);
 ?>
-<?php $gatherData->next() ?>
-<tr>
-	<th>タイトル</th>
-	<td><?php print_r($gatherData->current()) ?></td>
-</tr>
-<?php $gatherData->next() ?>
-<tr>
-	<th>詳細</th>
-	<td><?php print_r($gatherData->current()) ?></td?
-</tr>
+<?php 
+$gatherData->next() ;
+$list['タイトル'] = $gatherData->current(); 
+$gatherData->next();
+$list['詳細'] = $gatherData->current();
+$options = array(
+	'title' => 'ギャザー',
+	'list' => $list,
+)
+?>
+<?php op_include_parts('listBox', 'profile', $options); ?>
 
 <?php slot('activities') ?>
 <div class="box_list">
@@ -39,6 +38,3 @@ $activities = Doctrine::getTable('ActivityData')->createQuery()->whereIn('id', $
 <?php op_include_box($id, get_slot('activities'), $params) ?>
 
 <?php endforeach ?>
-</table>
-</div></div>
-

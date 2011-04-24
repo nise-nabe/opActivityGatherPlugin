@@ -2,7 +2,6 @@
 ?>
 
 <?php
-// $gatherId = $gatherData->current();
 $gatherActivities = Doctrine::getTable('GatherActivity')->createQuery()->where('gather_data_id = ?', $data->getId())->fetchArray();
 $activityIds = array();
 
@@ -10,8 +9,8 @@ foreach ($gatherActivities as $gatherActivity){
 	array_push($activityIds, $gatherActivity['activity_id']);
 }
 $activities = Doctrine::getTable('ActivityData')->createQuery()->whereIn('id', $activityIds)->execute();
-#print_r($activityIds);
 ?>
+
 <tr>
 	<th>タイトル</th>
 	<td><?php print($data->getTitle()) ?></td>
