@@ -17,15 +17,8 @@ class PluginGatherActivityTable extends Doctrine_Table
         return Doctrine_Core::getTable('PluginGatherActivity');
     }
 
-    
-
-    public function getOrderdQuery(){
-    	return $this->createQuery();#->orderBy('created_at DESC'); 
+    public function getOrderdQuery()
+    {
+      return $this->createQuery();
     }
-
-#    public function findGatherDataId($gather_id){
-#	$query = $this->getOrderdQuery();
-#	$query->andWhere('gather_data_id = ?', $gather_id);
-#	return $query->execute();
-#    }
 }

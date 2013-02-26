@@ -1,6 +1,7 @@
 <?php
 
-class opGatherPluginActions extends sfActions{
+class opGatherPluginActions extends sfActions
+{
  /**
   * Executes index action
   *
@@ -16,11 +17,10 @@ class opGatherPluginActions extends sfActions{
   {
     $this->acts = $request->getParameter('activities');
     // if there is no selected activities 
-    if(count($this->acts)==0)
+    if(0 === count($this->acts))
     {
         $this->forward('error');
     }
-
 
     $form = new GatherDataForm();
     $form->setWidget('activities', new sfWidgetFormInputHidden());
@@ -48,7 +48,6 @@ class opGatherPluginActions extends sfActions{
 
   public function executeShow(sfWebRequest $request)
   {
-    //$this->data = Doctrine::getTable('GatherData')->find();
   }
 
   // Action to show all gathered datas.
@@ -57,4 +56,3 @@ class opGatherPluginActions extends sfActions{
     $this->data = Doctrine::getTable('GatherData')->findAll(Doctrine_Core::HYDRATE_NONE);
   }
 }
-?>
