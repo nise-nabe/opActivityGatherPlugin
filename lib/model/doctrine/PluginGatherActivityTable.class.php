@@ -17,8 +17,4 @@ class PluginGatherActivityTable extends Doctrine_Table
         return Doctrine_Core::getTable('PluginGatherActivity');
     }
 
-    public function getOrderdQuery()
-    {
-      return $this->createQuery();
-    }
 }
