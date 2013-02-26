@@ -1,5 +1,6 @@
 <?php
-class gatherComponents extends opGatherPluginComponents {
+
+class gatherComponents extends opGatherPluginComponents
+{
 
 }
-?>
